@@ -15,3 +15,8 @@ template "#{node['apache']['dir']}/conf.d/webgrind.conf" do
   mode "0644"
   notifies :restart, "service[apache2]"
 end
+
+template "#{node['webgrind']['install_path']}/config.php" do
+  source "config.php.erb"
+  mode "0600"
+end
