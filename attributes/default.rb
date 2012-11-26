@@ -1,5 +1,7 @@
 default['webgrind']['install_path'] = "/var/www/webgrind"
 
+default['webgrind']['webserver'] = 'apache2'
+
 default['webgrind']['check_version'] = "false"
 default['webgrind']['hide_webgrind_profiles'] = "true"
 default['webgrind']['storage_dir'] = ""
