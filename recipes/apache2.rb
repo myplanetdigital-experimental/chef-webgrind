@@ -1,3 +1,5 @@
+include_recipe "apache2"
+
 template "#{node['apache']['dir']}/sites-available/webgrind" do
   source "webgrind.conf.erb"
   owner "root"

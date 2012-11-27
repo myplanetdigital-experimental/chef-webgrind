@@ -13,6 +13,5 @@ template "#{node['webgrind']['install_path']}/config.php" do
 end
 
 if node['webgrind']['webserver'] == "apache2"
-  include_recipe "apache2"
   include_recipe "webgrind::apache2"
 end
