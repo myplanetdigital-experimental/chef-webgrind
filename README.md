@@ -10,7 +10,7 @@ Requirements
 
 Tested on:
 
-* Ubuntu 12.04
+* Ubuntu 12.04 with apache2
 
 ## Cookbooks:
 
@@ -21,9 +21,14 @@ Tested on:
 Attributes
 ==========
 
-The installation path can be configured
+The installation path can be configured.
 
 * default['webgrind']['install_path'] = "/var/www/webgrind"
+
+By default an apache2 site for webgrind will be set up. 
+You can prevent chef from doing this by setting ['webgrind']['webserver'] to false.
+
+* default['webgrind']['webserver'] = 'apache2'
 
 The following are node attributes passed to the configuration template for webgrind.
 See the config file for descriptions.
