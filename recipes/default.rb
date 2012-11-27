@@ -1,5 +1,4 @@
 include_recipe "git"
-include_recipe "apache2"
 include_recipe "xdebug"
 
 git "#{node['webgrind']['install_path']}" do
@@ -8,15 +7,11 @@ git "#{node['webgrind']['install_path']}" do
   action :sync
 end
 
-template "#{node['apache']['dir']}/conf.d/webgrind.conf" do
-  source "webgrind.conf.erb"
-  owner "root"
-  group "root"
-  mode "0644"
-  notifies :restart, "service[apache2]"
-end
-
 template "#{node['webgrind']['install_path']}/config.php" do
   source "config.php.erb"
   mode "0600"
+end
+
+if node['webgrind']['webserver'] == "apache2"
+  include_recipe "webgrind::apache2"
 end
