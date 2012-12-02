@@ -1,4 +1,5 @@
 default['webgrind']['install_path'] = "/var/www/webgrind"
+default['webgrind']['configure'] = true
 
 default['webgrind']['check_version'] = "false"
 default['webgrind']['hide_webgrind_profiles'] = "true"

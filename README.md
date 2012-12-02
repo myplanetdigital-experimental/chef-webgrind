@@ -21,9 +21,14 @@ Tested on:
 Attributes
 ==========
 
-The installation path can be configured
+The installation path can be configured by setting the following option.
 
 * default['webgrind']['install_path'] = "/var/www/webgrind"
+
+By default a configuration file for webgrind will be generated. You can disable this
+by setting the following option to false.
+
+* default['webgrind']['configure'] = true
 
 The following are node attributes passed to the configuration template for webgrind.
 See the config file for descriptions.
