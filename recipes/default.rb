@@ -9,7 +9,7 @@ end
 
 template "#{node['webgrind']['install_path']}/config.php" do
   source "config.php.erb"
-  mode "0600"
+  mode "0644"
 end
 
 if node['webgrind']['webserver'] == "apache2"
